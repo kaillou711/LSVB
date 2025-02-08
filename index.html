@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Pierre WATTELLE">
+        <meta name="description" content="Club de Volley-Ball de la ville de Seclin depuis 1988.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Linking font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Linking google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Staatliches&display=swap" rel="stylesheet">
+        <!-- Linking logo of website-->
+        <link rel="icon" type="image/x-icon" href="img/logo.png">
+        <!-- Linking google fonts for incons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward_ios" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home_pin" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=call" />
+        <!-- Linking SwiperJS CSS-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <title>LSVB - La Seclinoise Volley Ball</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></a></li>
+                    <li><a href="index.html">LSVB</a></li>
+                    <li><a href="https://www.google.fr/maps/place/Collège+Jean+Demailly/@50.5435353,3.0114952,1416m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47c2d37b466079bb:0xd352a01ddea58cb6!8m2!3d50.5435353!4d3.0140701!16s%2Fg%2F11btlz9k8l?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D">Salle</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn" id="competitions">Compétitions</button>
+                            <div class="dropdown-content">
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=LIFL&poule=1MC&calend=COMPLET&equipe=7" target="_blank" class="mode1">Senior M 1</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=PTFL59&poule=DMB&calend=COMPLET&equipe=3" target="_blank" class="mode2">Senior M 2</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=PTFL59&poule=DFA&calend=COMPLET&equipe=2" target="_blank" class="mode3">Senior F 1</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=PTFL59&poule=DFA&calend=COMPLET&equipe=2" target="_blank" class="mode4">Senior F 2</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIFL&poule=JME" target="_blank" class="mode5">M21</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=PTFL59&poule=DLF&calend=COMPLET&equipe=1" target="_blank" class="mode6">Loisir 1</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=PTFL59&poule=DLE&calend=COMPLET&equipe=6" target="_blank" class="mode7">Loisir 2</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar">
+                    <li><a href="index.html">LSVB</a></li>
+                    <li class="hideOnMobile"><a href="https://www.google.fr/maps/place/Collège+Jean+Demailly/@50.5435353,3.0114952,1416m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47c2d37b466079bb:0xd352a01ddea58cb6!8m2!3d50.5435353!4d3.0140701!16s%2Fg%2F11btlz9k8l?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D">Salle</a></li>
+                    <li class="hideOnMobile">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="competitions">Compétitions</button>
+                            <div class="dropdown-content">
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=LIFL&poule=1MC&calend=COMPLET&equipe=7" target="_blank" class="mode1">Senior M 1</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=PTFL59&poule=DMB&calend=COMPLET&equipe=3" target="_blank" class="mode2">Senior M 2</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=PTFL59&poule=DFA&calend=COMPLET&equipe=2" target="_blank" class="mode3">Senior F 1</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=PTFL59&poule=DFA&calend=COMPLET&equipe=2" target="_blank" class="mode4">Senior F 2</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIFL&poule=JME" target="_blank" class="mode5">M21</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=PTFL59&poule=DLF&calend=COMPLET&equipe=1" target="_blank" class="mode6">Loisir 1</a>
+                                <a href="https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024%2F2025&codent=PTFL59&poule=DLE&calend=COMPLET&equipe=6" target="_blank" class="mode7">Loisir 2</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="hideOnMobile"><a href="#titre-entrainement">Entrainement</a></li>
+                    <li onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+            </nav>
+            <script>
+                function showSidebar(){
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.style.display = 'flex';
+                };
+                function hideSidebar(){
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.style.display = 'none';
+                }
+            </script>
+            <div class="slide-container">
+                <div class="slides">
+                    <img src="img/reg-h.jpeg" class="active">
+                    <img src="img/dep-h.jpeg">
+                    <img src="img/dep-f.jpeg">
+                </div>
+    
+                <div class="buttons">
+                    <span class="next">&#10095;</span>
+                    <span class="prev">&#10094;</span>
+                </div>
+    
+                <div class="dotsContainer">
+                    <div class="dot active" attr="0" onclick="switchImage(this)"></div>
+                    <div class="dot" attr="1" onclick="switchImage(this)"></div>
+                    <div class="dot" attr="2" onclick="switchImage(this)"></div>
+                </div>
+            </div>
+            <script type="text/javascript">
+
+                //Access the Images
+                let slideImages = document.querySelectorAll('img');
+                //Access to the next and prev buttons
+                let next = document.querySelector('.next');
+                let prev = document.querySelector('.prev');
+                //Access the Indicators
+                let dots = document.querySelectorAll('.dot');
+    
+                var counter = 0;
+    
+                //Code for next button
+                next.addEventListener('click', slideNext);
+                function slideNext(){
+                slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+                if(counter >= slideImages.length-1){
+                    counter = 0;
+                }
+                else{
+                    counter++;
+                }
+                slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+                indicators();
+                }
+    
+                //Code for prev button
+                prev.addEventListener('click', slidePrev);
+                function slidePrev(){
+                slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+                if(counter == 0){
+                    counter = slideImages.length-1;
+                }
+                else{
+                    counter--;
+                }
+                slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+                indicators();
+                }
+    
+                //Auto slideing
+                function autoSliding(){
+                    deletInterval = setInterval(timer, 5000);
+                    function timer(){
+                        slideNext();
+                        indicators();
+                    }
+                }
+                autoSliding();
+    
+                //Stop auto sliding when mouse is over
+                const container = document.querySelector('.slide-container');
+                container.addEventListener('mouseover', function(){
+                    clearInterval(deletInterval);
+                });
+    
+                //Resume sliding when mouse is out
+                container.addEventListener('mouseout', autoSliding);
+    
+                //Add and remove active class from the indicators
+                function indicators(){
+                    for(i = 0; i < dots.length; i++){
+                        dots[i].className = dots[i].className.replace(' active', '');
+                    }
+                    dots[counter].className += ' active';
+                }
+            </script>
+            </section>
+        </header>
+        <div class="titre">
+            <h1>-- Actualités --</h1>
+        </div>
+        <section class="main-container">
+            <div class="actu-container swiper">
+                <div class="card-wrapper">
+                    <ul class="card-list swiper-wrapper">
+                        <li class="card-item swiper-slide">
+                            <a class="card-link">
+                                <img src="img/post-insta-01-02-25-WB-regH.png" alt="Card Image" class="card-image">
+                                <p class="badge match">Match à venir</p>
+                                <h2 class="card-title">Lorem ipsum dolor sit explicdabo adipisicing elit</h2>
+                                <button class="card-button
+                                material-symbols-rounded">arrow_forward_ios</button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                                <a class="card-link">
+                                    <img src="img/post-insta-16-11-24-WB-regH.png" alt="Card Image" class="card-image">
+                                    <p class="badge calendrier">Calendrier du mois</p>
+                                    <h2 class="card-title">Lorem ipsum dolor sit explicdabo adipisicing elit</h2>
+                                    <button class="card-button
+                                    material-symbols-rounded">arrow_forward_ios</button>
+                                </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a class="card-link">
+                                <img src="img/post-insta-23-11-24-WB-regH.png" alt="Card Image" class="card-image">
+                                <p class="badge resultat">Resultat</p>
+                                <h2 class="card-title">Lorem ipsum dolor sit explicdabo adipisicing elit</h2>
+                                <button class="card-button
+                            material-symbols-rounded">arrow_forward_ios</button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a class="card-link">
+                                <img src="img/post-insta-23-11-24-WB-depH.png" alt="Card Image" class="card-image">
+                                <p class="badge resume">Resume du mois</p>
+                                <h2 class="card-title">Lorem ipsum dolor sit explicdabo adipisicing elit</h2>
+                                <button class="card-button
+                                material-symbols-rounded">arrow_forward_ios</button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="https://www.google.fr/maps/place/Collège+Jean+Demailly/@50.5440317,3.0141953,368m/data=!3m1!1e3!4m6!3m5!1s0x47c2d37b466079bb:0xd352a01ddea58cb6!8m2!3d50.5435353!4d3.0140701!16s%2Fg%2F11btlz9k8l?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D" target="_blank"" class="card-link">
+                                <img src="img/salle.jpg" alt="Card Image" class="card-image">
+                                <p class="badge avertissement">Avertissement</p>
+                                <h2 class="card-title">Attention, changement de salle jusqu'une durée indeterminée ! Les des activités auront lieu à la salle Jacques-Secrétin, près du collège Jean Demailly.</h2>
+                                <button class="card-button
+                                material-symbols-rounded">arrow_forward_ios</button>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+        <div class="titre2">
+            <h1 id="titre-entrainement">-- Entraînements --</h1>
+        </div>
+        <section class="main-table-container">
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Lundi</th>
+                        <th>Mardi</th>
+                        <th>Mercredi</th>
+                        <th>Vendredi</th>
+                    </tr>
+                        <tr>
+                        <th data-cell="Loisirs confirmés">Loisirs confirmés</th>
+                        <td class="time">20h00-23h00</td>
+                    </tr>
+                    <tr>
+                        <th data-cell="Féminines Senior 2">Féminines Senior 2</th>
+                        <td class="time">20h00-21h30</td>
+                        <td style="background-color: white;"></td>
+                        <td  class="time">21h00-23h00</td>
+                        <td style="background-color: white;"></td>
+                    </tr>
+                    <tr>
+                        <th data-cell="Féminines Senior 1">Féminines Senior 1</th>
+                        <td class="time">21h30-23h00</td>
+                        <td style="background-color: white;"></td>
+                        <td class="time">21h00-23h00</td>
+                        <td style="background-color: white;"></td>
+                    </tr>
+                    <tr>
+                        <th data-cell="Masculins Senior reg">Masculins Senior reg</th>
+                        <td style="background-color: white;"></td>
+                        <td class="time">21h00-23h00</td>
+                        <td style="background-color: white;"></td>
+                        <td class="time">21h00-23h00</td>
+                    </tr>
+                    <tr>
+                        <th data-cell="Masculins Senior dep">Masculins Senior dep</th>
+                        <td style="background-color: white;"></td>
+                        <td class="time">21h00-23h00</td>
+                        <td style="background-color: white;"></td>
+                        <td class="time">21h00-23h00</td>
+                    </tr>
+                    <tr>
+                        <th data-cell="Loisirs">Loisirs</th>
+                        <td style="background-color: white;"></td>
+                        <td style="background-color: white;"></td>
+                        <td style="background-color: white;"></td>
+                        <td class="time">21h00-23h00</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Linking SwiperJS script -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Linking custom script -->
+        <script src="script/script.js"></script>
+        <footer>
+            <div class="footer-container">
+                <div class="logo">
+                    <img src="img/logo.png" width="60%">
+                </div>
+                <div class="sec aboutus">
+                    <h2>À propos de nous</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+                    elit. Hic harum distinctio magnam voluptatum eaque. 
+                    Repellat officiis reprehenderit nisi quam quaerat necessitatibus dicta omnis?</p>
+                    <ul class="sci">
+                        <li><a href="https://www.instagram.com/laseclinoisevolleyball/" target="_blank"><i class="fa-brands fa-instagram" style="color: #333;"></i></a></li>
+                    </ul>
+                </div>
+                <div class="sec contact">
+                    <h2>Nous Contacter</h2>
+                    <ul class="info">
+                        <li>
+                            <span><i class="fa-solid fa-envelope"></i></span><p><a href="mailto:contact@seclinoisevolleyball.fr">contact@seclinoisevolleyball.fr</p></a>
+                        </li>
+                        <li>
+                            <span><i class="fa-solid fa-house"></i></span><p>Salle Collège Jean Demailly Hauts-de-france - Rue du collège, 59113 SECLIN</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sec quicklinks">
+                    <h2>Liens Utiles</h2>
+                    <ul class="links">
+                        <li><a href="http://www.ffvb.org">FFVB</a></li>
+                        <li><a href="https://lrvolley-hdf.fr">Ligue HDF</a></li>
+                        <li><a href="https://lrvolley-hdf.fr/bri-2024-2025/">BRI</a></li>
+                        <li><a href="https://cdvbnord.com">Comité départementale</a></li>
+                        <li><a href="https://cdvbnord.com/index.php/publications-officielles/">BDI</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div class="copyrightText">
+            <p>Copiright 2025 LSVB - La Seclinoise Volley-Ball | All Rgihts Reserved.</p>
+        </div>
+    </body>
+</html>

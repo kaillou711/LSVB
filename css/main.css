@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Bowlby+One+SC&family=Staatliches&display=swap');
+ 
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background: linear-gradient(#ECEDDE,#CED6FB);
+}
+
+/***  NAV BAR HEADER ***/
+nav {
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px;
+}
+
+nav a, nav button{
+    font-family: Gabarito, Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+@media (max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+}
+/*** DROPDOWN ***/
+nav .sidebar .dropdown .dropbtn {
+    background-color: rgba(255,255,255,0.0);
+    border: none;
+    color: black;
+    font-size: 22px;
+    outline: none;
+}
+
+nav .sidebar .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav .sidebar .dropdown-content a {
+    color: black;
+    display: block;
+    margin: 6px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav .sidebar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav .navbar .dropdown .dropbtn {
+    background-color: rgb(236, 237, 222);
+    border: none;
+    color: black;
+    font-size: 22px;
+    outline: none;
+}
+
+nav .navbar .dropdown-content {
+    background-color: rgba(236, 237, 222,0.7);
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav .navbar .dropdown-content a {
+    color: black;
+    display: block;
+    margin: 6px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav .navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+/*** SLIDE BAR HEADER ***/
+
+.slide-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.slide-container .slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-container .slides img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+
+.slide-container .slides img:not(.active){
+    top: 0;
+    left: -100%;
+}
+
+span.next, span.prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 14px;
+    color: #eee;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.5s;
+    border-radius: 3px;
+    user-select: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+span.next {
+    right: 20px;
+}
+
+span.prev {
+    left: 20px;
+}
+
+span.next:hover, span.prev:hover {
+    background-color: #ede6d6;
+    opacity: 0.8;
+    color: #222;
+}
+
+.dotsContainer {
+    position: absolute;
+    bottom: 5px;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dotsContainer .dot {
+    width: 20px;
+    height: 20px;
+    margin: 0px 2px;
+    border: 3px solid #eee;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dotsContainer .active {
+    background-color: #eee;
+}
+
+@keyframes next1{
+    from{
+        left: 0%;
+    }
+    to{
+        left: -100%;
+    }
+}
+
+@keyframes next2{
+    from{
+        left: 100%;
+    }
+    to{
+        left: 0%;
+    }
+}
+
+@keyframes prev1{
+    from{
+        left: 0%;
+    }
+    to{
+        left: 100%;
+    }
+}
+
+@keyframes prev2{
+    from{
+        left: -100%;
+    }
+    to{
+        left: 0%;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .slide-container {
+        height: calc(300px + 5vw);
+    }
+}
+
+/*** MAIN ACTUALITE ***/
+.titre	{
+	font-family: "Bowlby One SC", serif;
+	color: #5372F0;
+	text-align: center;
+	padding-top: 100px;
+	font-size: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+	.titre {
+		font-size: calc(0px + 3.3vw);
+	}
+}
+
+.main-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 70vh;
+	font-family: Gabarito, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card-wrapper {
+	max-width: 1100px;
+	margin: 0 60px 35px;
+	padding: 20px 10px;
+	overflow: hidden;
+}
+
+.card-list .card-item {
+	list-style: none;
+}
+
+.card-list .card-item .card-link {
+	user-select: none;
+	display: block;
+	background: #fff;
+	padding: 18px;
+	border-radius: 12px;
+	text-decoration: none;
+	border: 2px solid transparent;
+	box-shadow: 0 10px 10px rgb(0, 0, 0, 0.05);
+	transition: 0.2s ease;
+}
+
+.card-list .card-item .card-link:hover {
+	border-color: #5372F0;
+}
+
+.card-list .card-link .card-image {
+	width: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.card-list .card-link .badge{
+	color: rgb(59, 80, 172);
+	padding: 8px 16px;
+	font-size: 0.95rem;
+	font-weight: 500;
+	margin: 16px 0 18px;
+	background: #dde4ff;
+	width: fit-content;
+	border-radius: 50px;
+}
+
+.card-list .card-link .badge.match {
+	color: rgb(59, 80, 172);
+	background: #dde4ff;
+}
+
+.card-list .card-link .badge.calendrier {
+	color: rgb(71, 172, 59);
+	background: #e4ffdd;
+}
+
+.card-list .card-link .badge.resultat {
+	color: rgb(172, 159, 59);
+	background: #fffcdd;
+}
+
+.card-list .card-link .badge.resume {
+	color: rgb(172, 59, 165);
+	background: #ffddfb;
+}
+
+.card-list .card-link .badge.avertissement {
+	color: rgb(172, 59, 59);
+	background: #ffdddd;
+}
+
+.card-list .card-link .card-title {
+	font-size: 1.19rem;
+	color: #000;
+	font-weight: 600;
+}
+
+.card-list .card-link .card-button {
+	height: 35px;
+	width: 35px;
+	color: #5372F0;
+	border-radius: 50%;
+	margin: 30px 0 5px;
+	background: none;
+	cursor: pointer;
+	border: 2px solid #5372F0;
+	transform: rotate(-90deg);
+	transition: 0.4s ease;
+}
+
+.card-list .card-link:hover .card-button{
+	color: #fff;
+	background: #5372F0;
+}
+.titre2	{
+	font-family: "Bowlby One SC", serif;
+	color: #5372F0;
+	text-align: center;
+	font-size: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+	.titre2 {
+		font-size: calc(0px + 3.3vw);
+	}
+}
+
+/*** MAIN ENTRAINEMENT ***/
+ 
+.main-table-container{
+    text-align: center;
+    color: #000;
+    line-height: 1.5;
+    width: min(900px, 100% -3rem);
+    margin-inline: auto;
+    padding: 20px 10px 40px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-container{
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    font-family: Gabarito, Verdana, Geneva, Tahoma, sans-serif;
+    width: 1090px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 10px;
+}
+
+th {
+    font-size: 1.40rem;
+    font-weight: 600;
+    padding: 0.6rem 0.6rem 0.6rem 0;
+}
+
+td {
+    font-size: 1.19rem;
+    font-weight: 400;
+    background: #dde4ff;
+    border-radius: 50px;
+    color: #5372F0;
+    text-align: center;
+}
+
+@media screen and (max-width: 850px) {
+    th {
+        font-size: calc(11px);
+        padding: 0.4rem 0.4rem 0.4rem 0;
+    }
+    td {
+        font-size: calc(9px);
+    }
+    .main-table-container {
+        padding-top: 10px;
+    }
+}
+
+/***** FOOTER *****/
+
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+	background-color: rgba(83, 114, 240, 0.70);
+}
+
+footer p, a, h2{
+	font-family: Gabarito, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+footer .footer-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+footer .footer-container .sec h2{
+    position: relative;
+    color:#fff;
+    font-weight: 600px;
+    margin-bottom: 15px;
+}
+
+footer .footer-container .sec p {
+    color: #fff;
+}
+
+footer .footer-container .sci {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+}
+
+footer .footer-container .sci li {
+    list-style: none;
+}
+
+footer .footer-container .sci li a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+footer .footer-container .sci li a li {
+    color: #fff;
+    font-size: 20px;
+}
+
+footer .footer-container .contact .info {
+    position: relative;
+}
+
+footer .footer-container .contact .info li {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+footer .footer-container .contact .info li a {
+    color: #fff;
+}
+
+footer .footer-container .quicklinks {
+    position: relative;
+    color: #fff;
+}
+
+footer .footer-container .quicklinks ul li a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.copyrightText {
+    width: 100%;
+	background-color: rgba(83, 114, 240, 0.70);
+    padding: 20px 100px 20px;
+    text-align: center;
+    color: #fff;
+    border: 2px dotted rgba(255,255,255,0.30);
+    font-family: Gabarito, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+@media (max-width: 1024px){
+    footer {
+        padding: 20px;
+    }
+    footer .footer-container{
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+    .logo{
+        display: none;
+    }
+}
+
+@media (max-width:600px){
+    footer .footer-container{
+        display: block;
+        grid-template-columns: 2fr 1fr;
+    }
+    .aboutus{
+        display: none;
+    }
+}
+    
