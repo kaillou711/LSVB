@@ -58,7 +58,7 @@ nav li:first-child {
     height: 100vh;
     width: 250px;
     z-index: 999;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255,255,255,0.5);
     backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgba(0,0,0,0.1);
     display: none;
@@ -430,7 +430,7 @@ td {
         padding: 0.4rem 0.4rem 0.4rem 0;
     }
     td {
-        font-size: calc(9px);
+        font-size: calc(8px);
     }
     .main-table-container {
         padding-top: 10px;
